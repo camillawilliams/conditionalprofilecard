@@ -41,9 +41,7 @@ function render(variables = {}) {
           <h3>${variables.country ? variables.country : "Enter country"}</h3>
           
 
-    let social = "<ul></ul>";
-    if (variables.socialMediaPosition != null){
-        social =
+    
     
         <ul class="${variables.socialMediaPosition}">
             <li><a href="${
