@@ -33,14 +33,31 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+         <h1>${variables.name ? variables.name : "Enter name"} ${
+    variables.lastname ? variables.lastname : "Enter last name"
+  }</h1>
+          <h2>${variables.role ? variables.role : "Enter role"}</h2>
+          <h3>${variables.city ? variables.city : "Enter city"}</h3>
+          <h3>${variables.country ? variables.country : "Enter country"}</h3>
+          
+
+    let social = "<ul></ul>";
+    if (variables.socialMediaPosition != null){
+        social =
+    
+        <ul class="${variables.socialMediaPosition}">
+            <li><a href="${
+              variables.twitter
+            }"https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="${
+              variables.github
+            }"https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
+            <li><a href="${
+              variables.linkedin
+            }"https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="${
+              variables.instagram
+            }"https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
